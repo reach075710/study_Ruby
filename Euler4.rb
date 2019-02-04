@@ -10,6 +10,8 @@ l = 0
 x = 0
 
 answer_arr = Array.new
+temp_answer = 0
+max_answer = 0
 
 #MAIN
 
@@ -38,7 +40,14 @@ for i in 100..999
                 k -= 1
 
                 if k <= l then
-                    puts answer_arr.join()
+                    temp_answer = answer_arr.join().to_i
+                    # puts temp_answer
+
+                    if temp_answer >= max_answer then
+                        max_answer = temp_answer
+                        puts max_answer
+                    end
+                
                     break
                 end
             end
