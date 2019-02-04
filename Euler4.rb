@@ -7,7 +7,8 @@ i = 100
 j = 100
 k = 0
 l = 0
-x = 0
+m = 0
+n = 0
 
 answer_arr = Array.new
 temp_answer = 0
@@ -18,9 +19,11 @@ max_answer = 0
 
 for i in 100..999
     for j in 100..999
-        answer = i * j
-        
+        answer_arr = Array.new
         k = 0
+
+        answer = i * j
+    
         loop do
             answer_arr[k] = answer % 10
             answer = answer / 10
@@ -32,26 +35,38 @@ for i in 100..999
             k += 1
         end
 
-        for l in 0..k
-            if answer_arr[l] != answer_arr[k] then
+        # l = 0
+        # loop do
+        #     m = answer_arr[l]
+        #     answer_arr[l] = answer_arr[k]
+        #     answer_arr[k] = m
+
+        #     l += 1
+        #     if k - l <= l
+        #         break
+        #     end
+        # end
+
+        l = 0
+        loop do
+            if answer_arr[l] != answer_arr[k - l] then
                 break
             else
-                l += 1
-                k -= 1
-
-                if k <= l then
+                if k - l <= l then
                     temp_answer = answer_arr.join().to_i
-                    # puts temp_answer
-
+                    
                     if temp_answer >= max_answer then
                         max_answer = temp_answer
-                        puts max_answer
                     end
-                
+
                     break
+
                 end
+            
             end
+            l += 1
         end
     end
 end
 
+p max_answer
