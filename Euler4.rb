@@ -6,26 +6,43 @@
 i = 100
 j = 100
 k = 0
+l = 0
+x = 0
 
-answer = 0
+answer_arr = Array.new
 
 #MAIN
+
 
 for i in 100..999
     for j in 100..999
         answer = i * j
-        answer_float_to_str = answer.to_s
-        if answer_float_to_str.length % 2 == 0 then
-            head_leng = answer_float_to_str.length / 2 
-            for k in 1..head_leng
         
-        
-            
+        k = 0
+        loop do
+            answer_arr[k] = answer % 10
+            answer = answer / 10
+
+            if answer == 0 then
+                break
+            end
+
+            k += 1
         end
 
+        for l in 0..k
+            if answer_arr[l] != answer_arr[k] then
+                break
+            else
+                l += 1
+                k -= 1
+
+                if k <= l then
+                    puts answer_arr.join()
+                    break
+                end
+            end
+        end
     end
 end
 
-# puts i * j
-# check_number_length = (i * j).to_s
-# p check_number_length
