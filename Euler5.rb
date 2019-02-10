@@ -8,21 +8,17 @@ k = 0
 prime_factor_arr = Array.new
 
 #MAIN
-
-for i in 1..n
-    j = 2   #jは2以上
-    loop do
+n = 10
+for i in 2..n
+   for j in 2..i
         if i % j == 0 then
-            prime_factor_arr[k] = j
-            i = i / j
-
-            if i % j != 0 then
+            if i / j != 1
                 break
+            else
+                prime_factor_arr[k] = i
+                k += 1
             end
-          
-            k += 1
         end
-        j += 1
     end
-
 end
+puts prime_factor_arr
