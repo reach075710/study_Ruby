@@ -1,2 +1,2 @@
 # Ruby
-for write Ruby on rails
+for write scripts by Ruby 
