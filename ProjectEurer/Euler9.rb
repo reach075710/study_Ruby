@@ -13,18 +13,19 @@ for a in 1 .. max_a
     b = a
     loop do
         b += 1
-        c = Math.sqrt( a ** 2 + b ** 2 )
-
-        if a + b + c >= sum_abc then
+        c = sum_abc - a - b
+        if c < b then
+            break
+        end
+        
+        if c ** 2 == a ** 2 + b ** 2 then
             break
         end
     end
 
-    if c =~ /^[0-9]+$/ then
-        if a + b + c = sum_abc then
-            break
-        end
-    end    
+    if c ** 2 == a ** 2 + b ** 2 then
+        break
+    end
 end
-p c
+p a, b, c
 p a * b * c
