@@ -1,22 +1,29 @@
-n = gets.to_i
+#set
 counter = 0
+exit_code = 0
+
+#main
+n = gets.to_i
 numbers_arr = gets.chomp.split(" ").map(&:to_i)
-# if numbers_arr.length != n then
-#     exit
-# end
-numbers_arr.each do |i| 
-    if i % 2 == 1 then
+
+if n != numbers_arr.length then
+    exit
+end
+
+loop do
+    numbers_arr = numbers_arr.map do |i| 
+        if i % 2 == 1 then
+            exit_code = 1
+            break
+        end
+        i / 2
+    end
+
+    if exit_code == 1 then
         break
     end
 
-    numbers_arr[i] == numbers_arr[i] / 2
     counter += 1
-    p numbers_arr[i]
 end
-
-if numbers_arr[] < 1 || numbers_arr[i] % 2 == 1 then
-    break
-end
-
 
 print ("#{counter} \n")
