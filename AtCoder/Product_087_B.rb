@@ -20,43 +20,43 @@ for i in 0 .. a
     if i == 0 then 
         surplus_500 = x
     else
-        chk_500 = x / i
-        if chk_500 >= 1 then
-            surplus_500 = x % i
-        else
-            surplus_500 = x
-        end
+        # chk_500 = x / ( i * 500 ) 
+        # if chk_500 >= 1 then
+            surplus_500 = x - ( i * 500 )
+        #  else
+        #     surplus_500 = x
+        # end
     end
 
     for j in 0 .. b
         if j == 0 then
             surplus_100 = surplus_500
         else
-            chk_100 = surplus_500 / 100
-            if chk_100 >= 1 then
-                surplus_100 = surplus_500 % j
-            else
-                surplus_100 = surplus_500
-            end
+            # chk_100 = surplus_500 / ( j * 100 ) 
+            # if chk_100 >= 1 then
+                surplus_100 = surplus_500 - ( j * 100 )
+            # else
+            #     surplus_100 = surplus_500
+            # end 
         end
 
         for k in 0 .. c
             if k == 0 then
                 surplus_50 = surplus_100
             else
-                chk_50 = surplus_100 / 100
-                if chk_50 >= 1 then
-                    surplus_50 = surplus_100 % k
-                else
-                    surplus_50 = surplus_100
-                end
+                # chk_50 = surplus_100 / ( k * 50 )
+                # if chk_50 >= 1 then
+                    surplus_50 = surplus_100 - ( k * 50 )
+                # else
+                #     surplus_50 = surplus_100
+                # end
             end
+            if surplus_50 == 0 then
+                counter += 1
+            end
+            # print ("i=#{i},j=#{j},k=#{k},counter=#{counter} \n")
         end
     end
-    if surplus_50 == 0 then
-        counter += 1
-    end
-
 end
 
 print ("#{counter}\n")
