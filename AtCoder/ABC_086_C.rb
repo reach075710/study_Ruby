@@ -3,7 +3,6 @@ n = gets.chomp.to_i
 t = Array.new
 x = Array.new
 y = Array.new
-now = Array.new(2,0)
 answer = 'Yes'
 t[0] = 0
 x[0] = 0
@@ -13,7 +12,6 @@ y[0] = 0
      t[i + 1] = plan_arr[0] 
      x[i + 1] = plan_arr[1]
      y[i + 1] = plan_arr[2]
-     now[i + 1] = ([x[i + 1],y[i + 1]])
 end
 
 #main
