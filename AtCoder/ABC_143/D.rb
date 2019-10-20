@@ -12,16 +12,26 @@ sum = 0
         low_limit = j + 1
         high_limit = n - 1
         loop do
-            if s[(low_limit + high_limit) / 2] > sum then
+
+            print ("i=#{i}\n")
+            print ("j=#{j}\n")
+            print ("high_limit=#{high_limit}\n")
+            print ("low_limit=#{low_limit}\n")
+            
+            if s[(low_limit + high_limit) / 2] >= sum then
                 high_limit =  ((low_limit + high_limit) / 2)
             else
                 low_limit = ((low_limit + high_limit) / 2)
             end
-            print ("high_limit=#{high_limit}\n")
-            print ("low_limit=#{low_limit}\n")
+
             if high_limit <= low_limit + 1 then
-                count += (n - 1) - low_limit
-                break
+                if high_limit == j + 1 && s[high_limit] >= sum  then
+                    break
+                else
+                    count += ((high_limit) - j)
+                    print ("count=#{count}\n")
+                    break
+                end
             end
         end
         # (j + 1 .. n - 1).each do |k|
