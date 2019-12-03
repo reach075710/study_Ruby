@@ -15,8 +15,9 @@ chk = 0
           chk += 1 if s_arr[l] == i
         elsif chk == 1 then
           chk += 1 if s_arr[l] == j
-        else
+        elsif chk == 2 then
           chk += 1 if s_arr[l] == k
+        else
           break
         end
       end
