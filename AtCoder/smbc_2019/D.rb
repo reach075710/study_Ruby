@@ -15,16 +15,12 @@ chk = 0
           chk += 1 if s_arr[l] == i
         elsif chk == 1 then
           chk += 1 if s_arr[l] == j
-        elsif chk == 2 then
-          chk += 1 if s_arr[l] == k
         else
-          break
+          if s_arr[l] == k then
+            count += 1
+            break
+          end
         end
-      end
-
-      if chk == 3 then
-        count += 1
-        next
       end
     end
   end
