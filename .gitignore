@@ -1,4 +1,4 @@
 before_store-a/
 Ruby.code-workspace
 paiza/
-rails_tutorial/
+rails_tutorial/*
